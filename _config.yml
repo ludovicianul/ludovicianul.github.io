@@ -5,8 +5,8 @@ permalink:        pretty
 title:            M&#39;s Blog
 tagline:          'We&#39;re all different. This is the only thing we have in common.'
 description:      'practical thoughts about software engineering'
-url:              http://ludovicianul.github.io/
-baseurl:          /
+url:              https://ludovicianul.github.io/
+baseurl:          https://ludovicianul.github.io/
 
 author:
   name:           'Mark Otto'
