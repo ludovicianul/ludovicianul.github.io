@@ -6,7 +6,7 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            M&#39; Blog
+title:            M&#39;s Blog
 tagline:          'We&#39;re all different. This is the only thing we have in common.'
 description:      'practical thoughts about software engineering'
 url:              http://ludovicianul.github.io
