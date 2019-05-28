@@ -6,9 +6,9 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            M
-tagline:          'We are all different. This is the only thing we have in common.'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+title:            M&#39; Blog
+tagline:          'We&#39;re all different. This is the only thing we have in common.'
+description:      'practical thoughts about software engineering'
 url:              http://ludovicianul.github.io
 baseurl:          /
 
@@ -22,4 +22,4 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/ludovicianul
