@@ -2,15 +2,15 @@
 permalink:        pretty
 
 # Setup
-title:            M&#39;s Blog
+title:            m&#39;s blog
 tagline:          'We&#39;re all different. This is the only thing we have in common.'
 description:      'practical thoughts about software engineering'
 url:              https://ludovicianul.github.io/
 baseurl:          https://ludovicianul.github.io/
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Madalin Ilie'
+  url:            https://twitter.com/ludovicianul
 
 paginate:         5
 
