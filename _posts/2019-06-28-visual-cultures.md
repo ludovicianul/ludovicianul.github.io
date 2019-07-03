@@ -9,8 +9,7 @@ One of the first things we’ve used was an **eXtreme Feedback Device** (XFD). T
 
 And so, we’ve built one :)
 
- 
-Figure 1 - First Version of the XFD
+![XFD Version 1](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/xfd1.png "XFD Version 1")
 
 ## XFD 1.0
 The first version of the XFD was built using:
@@ -25,10 +24,9 @@ The Java agent was configurable so you could accommodate multiple CI builds or d
 
 Over time, as we become more teams, the need for **diversity** increased. This is why we’ve created different flavors of the XFD. They were working in the same way but had different aesthetics.
  
-Figure 2 - A more minimalistic version of the XFD
+![More minimalistic XFD](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/xfd2.png "More minimalistic XFD")
 
- 
-Figure 3 - The "Christmas" version
+![Christmas version](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/xfd3.png "Chistmas version")
 
 ##XFD 2.0
 
@@ -39,16 +37,8 @@ Welcome XFD 2.0! We didn’t actually build one. We bought Xiaomi Yeelight RGB l
 … until the need for **diversity** stroke again. After all what each team had was just a light bulb. So, we’ve launched a **competition** between teams. Who creates the best looking XFD (while still being powered by a light bulb)? I must say that the results are impressive. We now have 12 really cool concepts that in the same time capture the uniqueness of each team.
 All pictures below.
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+![Simpsons](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/simpsons.jpg "Simpsons")
+![Jedi Smurfs](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/jedi.jpg "Jedi Smurfs")
 
 ## XFDs are so early 00’s - Do they really work?
 
