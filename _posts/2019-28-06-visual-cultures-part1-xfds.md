@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Visual Cultures Part 1 XFDs
+title: What's Jekyll?
 ---
 
 
