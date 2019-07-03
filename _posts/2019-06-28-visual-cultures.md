@@ -11,6 +11,7 @@ And so, we’ve built one :)
 
 ![XFD Version 1](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/xfd1.png "XFD Version 1")
 
+
 ## XFD 1.0
 The first version of the XFD was built using:
 •	an Arduino board
@@ -28,7 +29,8 @@ Over time, as we become more teams, the need for **diversity** increased. This i
 
 ![Christmas version](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/xfd3.png "Chistmas version")
 
-##XFD 2.0
+
+## XFD 2.0
 
 We’ve used the 1.0 solution for almost 6 years. During an office move last year, we’ve noticed that everything was fine as long as you leave the XFD in one place. Once you need to move it around, it was a bit difficult for the 2018 geeks to cope with having so many wires (power-in, power-out, USB) and bulky designs.
 
@@ -39,6 +41,15 @@ All pictures below.
  
 ![Simpsons](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/simpsons.jpg "Simpsons")
 ![Jedi Smurfs](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/jedi.jpg "Jedi Smurfs")
+![Fight Club](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/fightclub.jpg "Fight Club")
+![Transformers](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/transformers.jpg "Transformers")
+![Black Sheep](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/blacksheep.jpg "Black Sheep")
+![Wolfpack](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/wolfpack.jpg "Wolfpack")
+![X-Men](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/xmen.jpg "X-Men")
+![Florence](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/florence.jpg "Florence")
+![Monsters](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/monsters.jpg "Monsters")
+![Incredibles](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/incredibles.jpg "Incredibles")
+![Lucky 13](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/lucky13.jpg "Lucky 13")
 
 ## XFDs are so early 00’s - Do they really work?
 
