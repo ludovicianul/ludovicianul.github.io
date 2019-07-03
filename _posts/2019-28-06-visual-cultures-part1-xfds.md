@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Visual Cultures - Part 1 XFDs
+title: Visual Cultures Part 1 XFDs
 ---
+
 
 My team (when I say team, I actually mean 14 individual teams at the moment) is using big visible dashboards since they weren’t **a thing**. In fact, not only dashboards, but our entire culture is very **visual**. We like things to be **transparent** and easily **accessible** with a simple look. This applies to **everything**: sprint/iteration progress, code quality, system test environments health, release readiness (I know, but not all of us are doing fully-automated-kubernetees-driven-continuous-delivery-with-10-deploys-per-day), build stability and so forth. Even if everything has a digital form that displays similar information, we prefer to also have the physical/visual stuff. It’s instant and meaningful. 
 
