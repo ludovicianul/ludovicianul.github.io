@@ -56,7 +56,7 @@ All pictures below.
 I **strongly** believe they do. But they **don’t** “just work”. **You must create a specific mindset**. Cultures do not emerge because things are there - that’s it; people need to behave in a certain way. They emerge if they are part of a **bigger picture**. From a mindset that considers that **visual items are important**. And that visual ways to show stuff are key for transparency and instant feedback.
 
 ## The code for XFD 2.0
-You can also start your own XFD in 2 minutes (after you buy a Xiaomi Yeelight RGB LED). The code is on GitHub: https://github.com/ludovicianul/yeextreme
+You can also start your own XFD in 2 minutes (after you buy a Xiaomi Yeelight RGB LED). The code is on GitHub: [https://github.com/ludovicianul/yeextreme](https://github.com/ludovicianul/yeextreme)
 
 **Be visual!**
 
