@@ -23,15 +23,15 @@ Also, as the API is quite rich (the file has 59k lines), I've only selected the 
 
 You can `CATS` as a blackbox testing tool and incrementally add minimal bits of context until you end up with consistent issues or a green suite. 
 
-As shown in the [previous article](https://ludovicianul.github.io/2020/09/09/cats/), running [CATS](https://github.com/Endava/cats) is quite simple:
-
+As shown in the [previous article](https://ludovicianul.github.io/2020/09/09/cats/), running [CATS](https://github.com/Endava/cats) is quite simple:  
+  
 ```shell script
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml
 ```  
 
-With the `headers_github.yml` having the following content:
+With the `headers_github.yml` having the following content:  
 
-```yaml
+```yaml 
 all:
   Authorization: token XXXXXXXXXXXXX
 ```  
@@ -62,7 +62,8 @@ This is the `refData_github.yml` file that will be used:
 Using the above `refData` file, `CATS` will now generate a new random `name` everytime it will execute a request to the GitHub API.
 Also, using the `cats_remove_field` value, `CATS` will remove this field from all requests before sending them to the endpoint. More details on this feature [here](https://github.com/Endava/cats#removing-fields).
 
-Running `CATS` again: 
+Running `CATS` again:  
+
 ```shell script
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml --refData=refData_github.yml
 ```  
@@ -81,7 +82,7 @@ We'll now update the `refData` file to look as follows:
   type: "cats_remove_field"
 ```  
 
-and run `CATS` again:
+and run `CATS` again:  
 
 ```shell script
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml --refData=refData_github.yml
