@@ -25,7 +25,7 @@ You can `CATS` as a blackbox testing tool and incrementally add minimal bits of 
 
 As shown in the [previous article](https://ludovicianul.github.io/2020/09/09/cats/), running [CATS](https://github.com/Endava/cats) is quite simple:  
   
-```shell script
+```shell
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml
 ```  
 
@@ -64,7 +64,7 @@ Also, using the `cats_remove_field` value, `CATS` will remove this field from al
 
 Running `CATS` again:  
 
-```shell script
+```shell
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml --refData=refData_github.yml
 ```  
 
@@ -84,7 +84,7 @@ We'll now update the `refData` file to look as follows:
 
 and run `CATS` again:  
 
-```shell script
+```shell
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml --refData=refData_github.yml
 ```  
 
@@ -154,7 +154,7 @@ There are some other failures which might seem debatable or not applicable:
 **Before proceeding, please be careful to not delete your real repos**
 This is the script I've used to delete the repos:
 
-```shell script
+```shell
 # get the latest 100 repos (by creation date)
 curl -s "https://api.github.com/users/ludovicianul/repos?sort=created&direction=desc&per_page=100" | jq -r '.[].name' >> repos
 
