@@ -6,6 +6,7 @@ title: How I ended up with 1k GitHub repos while showcasing CATS
 <span style="color:red">**!!! WARNING !!! If you choose to run this example, please note that you will end up with a significant number of dummy GitHub repos under your username. Over 1k in my case.
 There is a script at the end of the article that you can use to delete them. Be careful not to delete your real repos though!**</span>
 
+![Repos](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/github_repos.png)
 
 # The Beginning
 Building good APIs is hard. There are plenty of resources out there with plenty of good advice on how to achieve this. While some of the things are a must, like following the [OWASP REST Security Practices](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html),
@@ -26,27 +27,27 @@ As shown in the [previous article](https://ludovicianul.github.io/2020/09/09/cat
 
 ```shell script
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml
-```
+```  
 
 With the `headers_github.yml` having the following content:
 
 ```yaml
 all:
   Authorization: token XXXXXXXXXXXXX
-```
+```  
 
 Let's see what we get on a first run:
 
-![First Run](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/first_run_github.png)
+![First Run](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/first_run_github.png)  
 
 We have `42 warnings` and `156 errors`. Let's go through the errors first. Looking at the result of `Test 118` we see that a request failed due to the name of the repository not being unique. 
 Indeed, `CATS`, for each Fuzzer, preserves an initial payload that will be used to fuzz each of the request fields. This means that we need a way to force `CATS` to send unique names for the `name` field. Noted!
 
-![Test 118](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/test_118_github.png)
+![Test 118](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/test_118_github.png)  
 
-`Test 426` says that `If you specify visibility or affiliation, you cannot specify type.`. Let's note this down also.
+`Test 426` says that `If you specify visibility or affiliation, you cannot specify type.`. Let's note this down also.  
 
-![Test 426](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/test_426_github.png)
+![Test 426](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/test_426_github.png)  
 
 Considering the above 2 problems are reported consistently, let's give it another go with a [Reference Data File](https://github.com/Endava/cats#reference-data-file).
 This is the `refData_github.yml` file that will be used:
@@ -55,7 +56,7 @@ This is the `refData_github.yml` file that will be used:
 /user/repos:
   name: "T(org.apache.commons.lang3.RandomStringUtils).random(5,true,true)"
   type: "cats_remove_field"
-```
+```  
 
 `CATS` supports [dynamic values in properties values](https://github.com/Endava/cats#dynamic-values-in-configuration-files) via the [Spring Expression Language](https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html).
 Using the above `refData` file, `CATS` will now generate a new random `name` everytime it will execute a request to the GitHub API.
@@ -64,7 +65,7 @@ Also, using the `cats_remove_field` value, `CATS` will remove this field from al
 Running `CATS` again: 
 ```shell script
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml --refData=refData_github.yml
-```
+```  
 
 We now get `17 warnings` and `90 errors`. Again, looking though the tests failures/warnings there are some tests which are failing due to the fact the `since` and `before` are not sent in ISO8061 timestamp format (more on this inconsistency in the [Findings](#Findings) section).
 
@@ -78,13 +79,13 @@ We'll now update the `refData` file to look as follows:
   since: "T(java.time.Instant).now().minusSeconds(86400).toString()"
   name: "T(org.apache.commons.lang3.RandomStringUtils).random(5,true,false)"
   type: "cats_remove_field"
-```
+```  
 
 and run `CATS` again:
 
 ```shell script
 ./cats.jar --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml --refData=refData_github.yml
-```
+```  
 
 ![Third Run](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/third_run_github.png)
 
