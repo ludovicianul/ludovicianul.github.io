@@ -3,8 +3,8 @@ layout: post
 title: Small tips for improving the GitHub API
 ---
 # Disclaimer
-<span style="color:red">1. **!!! WARNING !!! If you choose to run the steps in this article, please note that you will end up with a significant number of dummy GitHub repos under your username. Over 1k in my case.
-There is a script at the end of the article that you can use to delete them. Be careful not to delete your real repos though!**</span>
+<span style="color:red">1. !!! WARNING !!! If you choose to run the steps in this article, please note that you will end up with a significant number of dummy GitHub repos under your username. Over 1k in my case.
+There is a script at the end of the article that you can use to delete them. Be careful not to delete your real repos though!</span>
 
 ![Repos](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/github_repos.png)
 
