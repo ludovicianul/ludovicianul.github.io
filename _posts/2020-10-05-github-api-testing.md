@@ -3,10 +3,10 @@ layout: post
 title: Small tips for improving the GitHub API
 ---
 # Disclaimer
-<span style="color:red">1. !!! WARNING !!! If you choose to run the steps in this article, please note that you will end up with a significant number of dummy GitHub repos under your username. Over 1k in my case.
+1. <span style="color:red">!!! WARNING !!! If you choose to run the steps in this article, please note that you will end up with a significant number of dummy GitHub repos under your username. Over 1k in my case.
 There is a script at the end of the article that you can use to delete them. Be careful not to delete your real repos though!</span>
 
-![Repos](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/github_repos.png)
+![Repos](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/github_repos.png)  
 
 2. This is a concrete example on how you can use [CATS](https://github.com/Endava/cats) and personal view on how I would improve the GitHub API. The findings are small things that will make the API more usable, predictable and consistent. 
 
