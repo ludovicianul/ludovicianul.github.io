@@ -12,7 +12,7 @@ And I think this is the main reason it might seem overwhelming to think early ab
 It's yet another complex thing in an already complex environment. It's not just all the technical complexities of modern architectures, it's also all the additional stuff: need to go to market fast, hard deadlines, team chemistry issues, underperformers, too many processes, meetings, etc.
 And it's a complex thing that will not break your system in day 1. It might take months/years until someone will find a vulnerability. Why focus on this from day 1? 
 Well, you might be right. The chances of something happening from day 1 are low.
-And it's very tempting to focus on something with immediate value (actual functiola features), rather than mitigating some future possibilities. 
+And it's very tempting to focus on something with immediate value (actual functional features), rather than mitigating some future possibilities. 
 The thing is, when a security issue happens, it can bring your entire system down. And this will be very bad for you and your users.
 
 I see it similar to airport security. We do all these checks, we scan people, we forbid them to take things onboard and so on, although `99.99..9%` of people don't plan to hijack the plane. 
