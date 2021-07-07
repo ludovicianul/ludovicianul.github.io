@@ -1,16 +1,18 @@
 ---
 layout: post
-title: An Incomplete List of Practical Security for Mortals
+title: Do you think an Emoji will break your API?
 ---
+
+If the answer is `I don't now!` or even worse `It's possible!  `, you need to read this.
 
 Software security is hard and complex. Many people think about it as something aside from the typical development process. It's usually seen as a responsibility of 
 `some security people that only care about security and don't understand that we need to deliver business value fast in an already complicated microservices-event-driven-api-frist-ha-cloud ecosystem`.
 I could add a lot more dashes to `microservices-event-driven-api-frist-ha-cloud`. 
 And I think this is the main reason it might seem overwhelming to think early about security and all the possible cases something or someone can break your system.
 It's yet another complex thing in an already complex environment. It's not just all the technical complexities of modern architectures, it's also all the additional stuff: need to go to market fast, hard deadlines, team chemistry issues, underperformers, too many processes, meetings, etc.
-And it's a complex thing that will not break your system in day 1. It might take years until someone will find a vulnerability. Why focus on this from day 1? 
+And it's a complex thing that will not break your system in day 1. It might take months/years until someone will find a vulnerability. Why focus on this from day 1? 
 Well, you might be right. The chances of something happening from day 1 are low.
-And it's very tempting to focus on something with immediate value, rather than mitigating some future possibilities. 
+And it's very tempting to focus on something with immediate value (actual functiola features), rather than mitigating some future possibilities. 
 The thing is, when a security issue happens, it can bring your entire system down. And this will be very bad for you and your users.
 
 I see it similar to airport security. We do all these checks, we scan people, we forbid them to take things onboard and so on, although `99.99..9%` of people don't plan to hijack the plane. 
@@ -22,7 +24,7 @@ I'm saying that people should develop **secure software** just like they develop
 
 The best way to instill this mindset is through a set of **standards** and **practices** that will create **habits**. 
 Going back to airport security, you don't let all the decisions on each individual security person. 
-"This person looks nice. Let them have the scissors, and a knife in their hand luggage". "You sir look very dehydrated, you can take your 2l liquid with you in the plane!"
+_"This person looks nice. Let them have the scissors, and a knife in their hand luggage"_. _"You sir look very dehydrated, you can take your big bottle of liquid with you in the plane!"_
 You create a set of rules, procedures (i.e., **standards**) that will apply equally to everyone. And you also create a set of guidelines (i.e., **practices**) on how to handle specific situations: if you see something suspicious in a hand luggage, you inspect it separately.
 
 In the next sections I'll detail standards and practices that cover the entire SDLC. 
@@ -116,7 +118,7 @@ Key things to consider:
 - add patterns restricting input for each string
 - for some properties it's easier to find patterns as they have clear definitions; a country code will always follow the `[A-Z]+`; for others, it's a bit more difficult; a `lastName` property needs to be quite loose, considering all names in all languages;
   the recommendation is at least to prevent strange characters like the Unicode control chars, separators or symbol; a recommended pattern object is the following: `^[^\p{C}\p{Z}\p{So}]*[^\p{C}\p{so}]+[^\p{C}\p{Z}\p{So}]*$`; this doesn't mean that you are now
-  protected from any type of injection; you still need to have a food understanding where the data goes and how it is processed, but at least you won't get [an emoji breaking your system](https://www.vice.com/en/article/gv5jgy/iphone-emoji-break-apps)
+  protected from any type of injection; you still need to have a good understanding where the data goes and how it is processed, but at least you won't get [an emoji breaking your system](https://www.vice.com/en/article/gv5jgy/iphone-emoji-break-apps)
   
 
 ## Logging standards
@@ -223,6 +225,7 @@ Key things to consider:
 - don't take the first (or latest) shiny tool/library/product you find; consider things like: is it stable?, is it maintained? does it have a track record? 
 - consider using tools such as [OWASP Dependency Check](https://owasp.org/www-project-dependency-check/), [License Plugin](https://www.mojohaus.org/license-maven-plugin/) or even more complex tools such as [Black Duck](https://www.blackducksoftware.com/)
 - create a list with the agreed tooling/libraries where people can choose from
+- update your dependencies frequently
 
 ## Code Analysis
 Key things to consider:
