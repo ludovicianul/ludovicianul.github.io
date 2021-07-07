@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Do you think an Emoji will break your API?
+title: An incomplete list of practices to improve security of your (micro)services
 ---
 
 If the answer is `I don't now!` or even worse `It's possible!  `, you need to read this.
