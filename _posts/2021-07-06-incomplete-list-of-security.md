@@ -2,9 +2,6 @@
 layout: post
 title: An incomplete list of practices to improve security of your (micro)services
 ---
-
-If the answer is `I don't now!` or even worse `It's possible!  `, you need to read this.
-
 Software security is hard and complex. Many people think about it as something aside from the typical development process. It's usually seen as a responsibility of 
 `some security people that only care about security and don't understand that we need to deliver business value fast in an already complicated microservices-event-driven-api-frist-ha-cloud ecosystem`.
 I could add a lot more dashes to `microservices-event-driven-api-frist-ha-cloud`. 
