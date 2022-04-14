@@ -1,6 +1,6 @@
 ---
 layout: post
-title: We need better tools for Web & API Software Testing
+title: We need better tools for Web and API Software Testing
 ---
 
 We need better and smarter tools for Web & API Software Testing. Especially when it comes to the functional testing side.
