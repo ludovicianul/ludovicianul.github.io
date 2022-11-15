@@ -27,9 +27,9 @@ Following the tutorial:
 
 - I have the [Vault OpenAPI file](https://developer.hashicorp.com/vault/api-docs/system/internal-specs-openapi)
 
-I want to run now CATS in [blackbox mode](https://endava.github.io/cats/docs/getting-started/running-cats#blackbox-mode):
+We are now ready to run CATS.
 
-**Let's start Vault in dev mode:**
+Let's start Vault in dev mode:
 
 ```shell
 vault server -dev
@@ -37,13 +37,13 @@ vault server -dev
 
 ![cats](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/vault-dev.png)
 
-**Export the Root Token as an environment variable:**
+Export the Root Token as an environment variable:
 
 ```shell
 export token=hvs.9eagj2vkhh7VXm40oUux5Dxw
 ```
 
-**Run CATS in blackbox mode:**
+Run CATS in blackbox mode:
 
 ```shell
 cats --contract=api.json --server=http://localhost:8200/v1 -H "X-Vault-Token=$token" -b 
@@ -61,7 +61,7 @@ Let's now open `cats-report/index.html` to better understand the errors.
 
 Some findings from the report:
 - `/identity/mfa/login-enforcement/{name}` - lots of errors, CATS receives `connection timeout` exceptions
-- `/sys/pprof/profile` - lots of error, CATS receives `read timeout` exceptions
+- `/sys/pprof/profile` - lots of errors, CATS receives `read timeout` exceptions
 - many other errors related to invalid configuration or input data that return `500` instead of `4XX`
 
 
