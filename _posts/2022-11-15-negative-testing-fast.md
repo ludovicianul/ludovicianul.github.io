@@ -13,21 +13,23 @@ to the business context and challenge your brain with creative work.
 
 In the next minutes I'll show you how easy is to use [CATS](https://github.com/Endava/cats) to do negative testing. 
 I'll use the [Get Started in 1 minute tutorial](https://endava.github.io/cats/docs/intro/) and use [Vault](https://github.com/hashicorp/vault) as the API under test.
-Vault is freshly installed and I don't have any setup or context for it. Following the tutorial:
+Vault is freshly installed and I don't have any setup or context for it. 
+
+Following the tutorial:
 
 - I have CATS installed:
-- 
+
 ![cats](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/cats-v.png)
 
 - I have Vault installed:
-- 
+
 ![cats](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/vault-v.png)
 
 - I have the [Vault OpenAPI file](https://developer.hashicorp.com/vault/api-docs/system/internal-specs-openapi)
 
-I want to run CATS now in [blackbox mode](https://endava.github.io/cats/docs/getting-started/running-cats#blackbox-mode):
+I want to run now CATS in [blackbox mode](https://endava.github.io/cats/docs/getting-started/running-cats#blackbox-mode):
 
-1. Let's start Vault in dev mode
+**Let's start Vault in dev mode:**
 
 ```shell
 vault server -dev
@@ -35,13 +37,13 @@ vault server -dev
 
 ![cats](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/vault-dev.png)
 
-2. Export the Root Token as an environment variable
+**Export the Root Token as an environment variable:**
 
 ```shell
 export token=hvs.9eagj2vkhh7VXm40oUux5Dxw
 ```
 
-3. Run CATS in blackbox mode
+**Run CATS in blackbox mode:**
 
 ```shell
 cats --contract=api.json --server=http://localhost:8200/v1 -H "X-Vault-Token=$token" -b 
