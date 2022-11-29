@@ -41,13 +41,13 @@ I had 3 goals in mind when building `CATS`:
 So that in the end, instead of having QAs doing all that repetitive work for each new service or endpoint, let them focus on creative and exploratory testing scenarios anchored in the context they are operating.
 
 You can find out more about CATS here: [https://ludovicianul.github.io/2020/09/09/cats/](https://ludovicianul.github.io/2020/09/09/cats/). But as a summary, 
-by only providing: [auth data](https://github.com/Endava/cats#headers-file) and [maybe some context](https://github.com/Endava/cats#reference-data-file)
+by only providing: [auth data](https://endava.github.io/cats/docs/getting-started/headers-file) and [maybe some context](https://endava.github.io/cats/docs/getting-started/reference-data-file)
 you can point it to your API endpoint and let it do its magic. As simple as that. 
 
 As with all the good things there are some caveats:
 - it only works with OpenAPI endpoints
 - it only works for JSON formats
 
-There is also a limited set of capabilities offered through [template payloads](https://github.com/Endava/cats#templatefuzzer).
+There is also a limited set of capabilities offered through [template payloads](https://endava.github.io/cats/docs/fuzzers/special-fuzzers/template-fuzzer).
 
 If you feel the same about repetitive work in testing APIs, take CATS for a spin and feel free to contribute.
