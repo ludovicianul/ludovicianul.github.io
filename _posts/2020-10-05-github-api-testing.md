@@ -72,7 +72,7 @@ Running `CATS` again:
 cats --contract=github.yml --server=https://api.github.com --paths="/user/repos" --headers=headers_github.yml --refData=refData_github.yml
 ```  
 
-We now get `17 warnings` and `90 errors`. Again, looking through the tests failures/warnings there are some tests which are failing due to the fact the `since` and `before` are not sent in ISO8061 timestamp format (more on this inconsistency in the [Findings](#Findings) section).
+We now get `17 warnings` and `90 errors`. Again, looking through the tests failures/warnings there are some tests which are failing due to the fact the `since` and `before` are not sent in ISO 8601 timestamp format (more on this inconsistency in the [Findings](#Findings) section).
 
 ![Second Run](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/second_run_github.png)
 
