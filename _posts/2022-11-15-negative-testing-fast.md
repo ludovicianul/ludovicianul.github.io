@@ -51,7 +51,7 @@ cats --contract=api.json --server=http://localhost:8200/v1 -H "X-Vault-Token=$to
 
 ![cats](https://github.com/ludovicianul/ludovicianul.github.io/raw/master/images/vault-r.png)
 
-At the end we get: `26 429` tests in almost `11 minutes`, out of which:
+At the end we get: `26 529` tests in almost `11 minutes`, out of which:
 - `26 364` are success (blackbox mode)
 - `165` are potential problems (i.e. response from the server was `500`)
 
