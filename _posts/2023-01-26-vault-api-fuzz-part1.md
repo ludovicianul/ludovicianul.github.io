@@ -46,7 +46,7 @@ Run CATS in blackbox mode:
 cats --contract=api.json --server=http://localhost:8200/v1 -H "X-Vault-Token=$token" -b 
 ```
 
-After 11 minutes we get the following results:
+After 11 minutes I get the following results:
 
 - 26314 successful tests (success in blackbox mode means not `500`)
 - 165 errors (i.e. `500`)
@@ -56,19 +56,19 @@ After 11 minutes we get the following results:
 # Findings
 ## Read timeouts
 Many requests done on `/sys/pprof/profile` result in read timeout. It's not clear what happens, as there is nothing present in the logs.
-To reproduce this, I can take any of these tests and do a replay: `cats replay Test31142`. 
+To reproduce this, I can take any of the failing tests for this path and do a replay: `cats replay Test31142`. 
 
 ## Socket hangups resulting in connection failures
 Multiple requests are causing connection failures:
 
-- a `POST` on `/sys/leases/lookup` with 
+- `POST` on `/sys/leases/lookup` with 
 ```json
 {
   "lease_id": null
 }
 ```
 
-- a `POST` on `/sys/leases/` with
+- `POST` on `/sys/leases/` with
 ```json
 {
   "url_lease_id": "mY77mev5F2AZ7Mbd",
@@ -77,7 +77,7 @@ Multiple requests are causing connection failures:
 }
 ```
 
-- a `POST` on `/sys/leases/revoke` with
+- `POST` on `/sys/leases/revoke` with
 ```json
 {
   "url_lease_id": "uo6etjzzBKOsuN",
@@ -85,6 +85,8 @@ Multiple requests are causing connection failures:
   "lease_id": null
 }
 ```
+
+They all result in connection errors.
 
 The logs show the following:
 
@@ -160,6 +162,8 @@ And it gets weirder. When the `type` is removed by the `RemoveFieldsFuzzer`, I g
   }
 ```
 
+I would expect something around `4XX`. The group still doesn't exist.
+
 ### Example 2
 If I do a `POST` on `/sys/capabilities` with:
 
@@ -187,7 +191,7 @@ I get a `500` with:
 }
 ```
 
-But if send a value within the `token` field:
+But if I send a value within the `token` field:
 
 ```json
 {
@@ -212,8 +216,10 @@ I get a `400`:
 }
 ```
 
+Again, inconsistent. I would still go with a consistent `4XX` response for all cases.
+
 ## Unexpected HTTP response codes
-Multiple endpoints will return `500` instead of `4xx` (which seems more suitable for those cases). 
+Multiple endpoints will return `500` instead of `4XX` (which I would consider more suitable for those cases). 
 `500` should usually be reserved for unexpected behaviour during server side processing, rather than predictable business errors.
 
 For example, a `POST` on `/sys/config/cors` with
@@ -235,7 +241,7 @@ Will return a `500`:
     ]
 }
 ```
-For which is clearly a validation issue. 
+This is clearly a validation issue, which the API user can correct.
 
 A `GET` on `/internal/counters/activity/export` will return a `500`:
 ```json
@@ -255,6 +261,10 @@ Bypassing authentication for a `GET` on `/sys/internal/ui/namespaces` will resul
 }
 ```
 
+For all these cases I would go for `4XX` for consistency and also better monitoring of the service. 
+If the API returns `500` for validation issues, it will be hard do differentiate between cases when something goes really wrong and `500` is a signal of a real processing issue.
+
+
 A `GET` on `/sys/policies/password/FZhyI/..%20;/` will result in a `500`:
 ```json
 {
@@ -264,13 +274,18 @@ A `GET` on `/sys/policies/password/FZhyI/..%20;/` will result in a `500`:
 }
 ```
 
-There are also a bunch of `500` cause by namespace not being found. Some examples: `cats replay Test37474`, `cats replay Test442`.
+This is confusing. Is the `500` because the policy was not found? Was there an issue while retrieving and processing it? Hard to say.
+
+Rest of the errors are caused by namespace not being found. Some examples: `cats replay Test37474`, `cats replay Test442`. I would, again, expect a `404` as the namespace was not found.
+
+# Final thoughts
+This is the end of part 1. Part 2 will continue with fuzzing with context i.e. creating a bunch of data (namespace, token, group etc) and use that as a context for fuzzing.
 
 Most important issues are raised on GitHub: 
-- https://github.com/hashicorp/vault/issues/18849
-- https://github.com/hashicorp/vault/issues/18850
-- https://github.com/hashicorp/vault/issues/18851
-- https://github.com/hashicorp/vault/issues/18852
+- [https://github.com/hashicorp/vault/issues/18849](https://github.com/hashicorp/vault/issues/18849)
+- [https://github.com/hashicorp/vault/issues/18850](https://github.com/hashicorp/vault/issues/18850)
+- [https://github.com/hashicorp/vault/issues/18851](https://github.com/hashicorp/vault/issues/18851)
+- [https://github.com/hashicorp/vault/issues/18852](https://github.com/hashicorp/vault/issues/18852)
 
 
 
